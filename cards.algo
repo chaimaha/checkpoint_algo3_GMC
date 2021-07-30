@@ -1,0 +1,33 @@
+ALGORITHM cards
+VAR
+  n: INTEGER
+  array[n] :ARRAY_OF INTEGER
+BEGIN
+    //read the number of cards
+    Read(n)
+    //insertion of cards (call procedure)
+    insertion_cards(array)
+    // show me cards
+    FOR i FROM 0 TO n-1   DO
+      Write(array[i])
+    END_FOR
+
+END
+//procedure insertion of cars by insetion sort
+PROCEDURE insertion_cards(var arr : ARRAY_OF INTEGER)
+
+
+VAR
+   i,j,current:INTEGER;
+BEGIN
+  
+    FOR i FROM 1 TO arr.length-1   DO
+        current:= arr[i];
+        j:=i-1;
+        while (j>=0 AND arr [j]>current) DO
+        arr[j+1]:= arr [j];
+        j:= j-1;
+        END_while
+        arr[j+1]= current;
+    END_FOR
+END
